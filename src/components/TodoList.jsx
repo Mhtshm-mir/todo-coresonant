@@ -10,14 +10,17 @@ function TodoList({id,completed,title,setTasks,tasks}) {
 
     const handleEdit=()=>{
         openEdit(!edit)
-        const newTasks =tasks.map((el,i)=>{
-            if(i+1==id){
-                return {...el,title:newTitle}
-            }else{
-                return el
-            }
-        })
-        setTasks(newTasks);
+        if(newTitle.length>0){
+            const newTasks =tasks.map((el,i)=>{
+                if(i+1==id){
+                    return {...el,title:newTitle}
+                }else{
+                    return el
+                }
+            })
+            setTasks(newTasks);
+        }
+        
     }
     const handleComplete= ()=>{
         const newTasks= tasks.map((el,i)=>{
