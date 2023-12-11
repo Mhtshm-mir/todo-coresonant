@@ -4,7 +4,7 @@ import TodoList from '../components/TodoList'
 import axios from "axios"
 function Todo() {
     const [tasks, setTasks] = useState([]);
-    const [filterTask,setFilterTask] = useState("")
+    const [filterTask,setFilterTask] = useState("all")
     const [filterTaskArr,setFilterTaskArr]= useState([])
       useEffect(()=>{
             axios.get("https://jsonplaceholder.typicode.com/users/1/todos")
